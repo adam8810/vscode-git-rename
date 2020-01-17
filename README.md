@@ -1,4 +1,4 @@
-# git-rename README
+# git-rename
 
 ## Features
 

@@ -3,7 +3,7 @@
   "publisher": "ambooth",
   "displayName": "git-rename",
   "description": "Rename files using git-mv",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.41.0"
   },
@@ -27,7 +27,7 @@
     "commands": [
       {
         "command": "extension.git-rename",
-        "title": "Rename (git-mv)"
+        "title": "Rename (git-mv) [TS]"
       }
     ]
   },
