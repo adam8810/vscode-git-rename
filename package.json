@@ -1,6 +1,10 @@
 {
   "name": "git-rename",
   "publisher": "ambooth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adam8810/vscode-git-rename"
+  },
   "displayName": "git-rename",
   "description": "Rename files using git-mv",
   "version": "1.0.0",
