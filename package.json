@@ -7,7 +7,7 @@
   },
   "displayName": "git-rename",
   "description": "Rename files using git-mv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.41.0"
   },
@@ -31,7 +31,7 @@
     "commands": [
       {
         "command": "extension.git-rename",
-        "title": "Rename (git-mv) [TS]"
+        "title": "Rename (git-mv)"
       }
     ]
   },

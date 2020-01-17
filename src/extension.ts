@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
+import logger from "./logger";
 const spawnCMD = require("spawn-command");
 const treeKill = require("tree-kill");
 
@@ -20,21 +21,22 @@ export function activate(context: vscode.ExtensionContext) {
   // The code you place here will be executed every time your command is executed
   let disposable = vscode.commands.registerCommand(
     "extension.git-rename",
-    file => {
-      console.log("h");
+    async file => {
       let folderPath = vscode.workspace.rootPath;
 
-      function log(str: string) {
-        //Write to output.
-        console.log(str);
-        channel.appendLine(str);
+      const log = logger(channel);
+
+      const dialogOptions: vscode.InputBoxOptions = {
+        value: file.fsPath
+      };
+
+      const newPath = await vscode.window.showInputBox(dialogOptions);
+
+      if (newPath == null || newPath === "") {
+        return;
       }
 
-      const regex = /\.js/gi;
-      const command = `git mv ${file.fsPath} ${file.fsPath.replace(
-        regex,
-        ".ts"
-      )}`;
+      const command = `git mv ${file.fsPath} ${newPath}`;
       log(command);
 
       process = spawnCMD(command, { cwd: folderPath });
