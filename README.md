@@ -1,7 +1,7 @@
 # git-rename
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/adam8810/vscode-git-rename/master/images/docs/menu.png" alt="Menu" />
+  <img src="https://raw.githubusercontent.com/adam8810/vscode-git-rename/master/images/docs/menu.png" alt="Menu" width="400" />
 </p>
 
 ## Features
