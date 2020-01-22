@@ -7,7 +7,7 @@
   },
   "displayName": "git-rename",
   "description": "Rename files using git-mv",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.41.0"
   },
@@ -20,20 +20,16 @@
   "main": "./out/extension.js",
   "contributes": {
     "menus": {
-      "explorer/context": [
-        {
-          "when": "explorerResourceIsFolder == false",
-          "command": "extension.git-rename",
-          "group": "7_modification"
-        }
-      ]
-    },
-    "commands": [
-      {
+      "explorer/context": [{
+        "when": "explorerResourceIsFolder == false",
         "command": "extension.git-rename",
-        "title": "Rename (git-mv)"
-      }
-    ]
+        "group": "7_modification"
+      }]
+    },
+    "commands": [{
+      "command": "extension.git-rename",
+      "title": "Rename (git-mv)"
+    }]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
