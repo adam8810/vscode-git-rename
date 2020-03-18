@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      const command = `git mv ${file.fsPath} ${newPath}`;
+      const command = `git mv "${file.fsPath}" "${newPath}"`;
       log(command);
 
       process = spawnCMD(command, { cwd: folderPath });
@@ -56,7 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
 // this method is called when your extension is deactivated
 export function deactivate() {
   if (process) {
-    treeKill(process.pid, "SIGTERM", function(err: any) {
+    treeKill(process.pid, "SIGTERM", function (err: any) {
       if (err) {
         treeKill(process.pid, "SIGKILL");
       }
