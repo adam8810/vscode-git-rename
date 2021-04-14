@@ -16,7 +16,7 @@ You must have git installed and the file must be watched by git
 
 ## Usage
 
-Right-click on a file in the File Explorer and choose "Rename (giv-mv)". Using the input text field that appears, enter the new name and press Enter. Note: Directory location can also be altered by adjusting the path.
+Right-click on a file in the File Explorer and choose "Rename (git-mv)". Using the input text field that appears, enter the new name and press Enter. Note: Directory location can also be altered by adjusting the path.
 
 ## Release Notes
 
