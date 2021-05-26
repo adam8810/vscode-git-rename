@@ -22,9 +22,15 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "extension.git-rename",
     async file => {
-      let folderPath = vscode.workspace.rootPath;
-
       const log = logger(channel);
+      let cwd;
+      const folders = vscode.workspace.workspaceFolders;
+
+      if (folders && folders[0]) {
+        cwd = folders[0].uri.path;
+      }
+      else return;
+
 
       const dialogOptions: vscode.InputBoxOptions = {
         value: file.fsPath
@@ -39,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
       const command = `git mv "${file.fsPath}" "${newPath}"`;
       log(command);
 
-      process = spawnCMD(command, { cwd: folderPath });
+      process = spawnCMD(command, { cwd });
       process.stdout.on("data", (buffer: Buffer) => log(buffer.toString()));
 
       process.stderr.on("data", (err: Buffer) => {

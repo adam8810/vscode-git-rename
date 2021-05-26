@@ -1,5 +1,11 @@
 # Change Log
 
+### 1.2.0
+
+Allow directories to be renamed
+Replace deprecated method
+Fix dev dependency vulnerability
+
 ### 1.1.3
 
 Allow spaces in filenames
