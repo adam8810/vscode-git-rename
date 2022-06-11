@@ -70,6 +70,8 @@ async function gitMove(file: vscode.Uri): Promise<void> {
     name: TERMINAL_NAME
   });
 
+  // cd to the file location, to put git to the context of the right submodule
+  terminal.sendText(`cd "${path.dirname(newPath.fsPath)}"`);
   terminal.sendText(command);
   terminal.show(true);
 }
