@@ -13,8 +13,24 @@
 			},
 			"group": {
 				"kind": "build",
-				"isDefault": true
+				"isDefault": false
 			}
-		}
+		},
+		{
+			"label": "compile",
+			"type": "npm",
+			"script": "compile",
+			"group": {
+				"isDefault": true,
+				"kind": "build"
+			},
+			"presentation": {
+				"panel": "shared",
+				"reveal": "always"
+			},
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
 	]
 }
