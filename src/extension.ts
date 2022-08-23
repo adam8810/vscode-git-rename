@@ -62,7 +62,7 @@ async function gitMove(file: vscode.Uri): Promise<void> {
   const newPath = vscode.Uri.joinPath(wsFolder.uri, newRelativePath);
 
   const gitPath = getGitPath();
-  const command = `${gitPath} mv "${file.fsPath}" "${newPath.fsPath}"`;
+  const command = `${gitPath} mv -f "${file.fsPath}" "${newPath.fsPath}"`;
   log(command);
 
   terminal = terminal ?? vscode.window.createTerminal({
